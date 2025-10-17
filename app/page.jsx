@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 import { motion } from "framer-motion";
 import ProcessComponent from "@/components/ProcessComponent";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       animate={{ opacity: 1, y: 0, transition: { delay: 1.2, duration: 0.6 } }}
       className="min-h-screen flex flex-col justify-center bg-gradient-to-b from-gray-900 via-gray-950 to-black"
     >
-      <div className="container mx-auto px-4 xl:px-0 flex flex-col xl:flex-row items-center justify-between gap-12">
+      <div className="container mx-auto px-4 xl:px-0 pt-5 flex flex-col xl:flex-row items-center justify-between gap-12">
         {/* Text Section */}
         <div className="order-2 text-center xl:text-left xl:order-none flex-1">
           <span className="text-lg text-white/60 uppercase tracking-widest">
@@ -89,7 +90,7 @@ export default function Home() {
   <Button variant="outline" size="lg" 
   className="flex items-center gap-3 text-lg p-4 uppercase border-accent-Default text-accent-Default hover:bg-accent-Default hover:text-black hover:scale-105 transition-all duration-500"
   >
-    تواصل معي
+    <Link href={"/contact"}>تواصل معي</Link>
   </Button>
 </div>
 
