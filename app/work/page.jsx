@@ -329,7 +329,7 @@ const Work = () => {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-screen flex flex-col justify-center py-16 bg-gradient-to-br from-gray-900 via-gray-950 to-black"
+      className="min-h-screen flex flex-col justify-center py-16 "
     >
       <div className="container mx-auto px-4 xl:px-0">
         <h1 className="text-4xl xl:text-5xl font-bold text-center text-accent-Default mb-12 neon-text">

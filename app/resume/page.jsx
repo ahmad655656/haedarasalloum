@@ -58,7 +58,7 @@ const Resume = () => {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { delay: 1.5, duration: 0.6 } }}
-      className="min-h-screen flex items-center justify-center py-16 bg-gradient-to-br from-gray-900 via-gray-950 to-black"
+      className="min-h-screen flex items-center justify-center py-16 "
     >
       <div className="container mx-auto px-4 xl:px-0">
         <Tabs defaultValue="experience" className="flex flex-col xl:flex-row gap-12">

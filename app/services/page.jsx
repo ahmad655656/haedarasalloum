@@ -33,7 +33,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center py-16 bg-gradient-to-br from-gray-900 via-gray-950 to-black">
+    <section className="min-h-screen flex flex-col justify-center py-16 ">
       <div className="container mx-auto px-4 xl:px-0">
         <h1 className="text-4xl xl:text-5xl font-bold text-center text-accent-Default mb-12 neon-text">
           My Services
@@ -52,11 +52,11 @@ const Services = () => {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.2 }}
-              className="relative flex flex-col gap-6 p-10 rounded-2xl group bg-white/5 backdrop-blur-md border border-white/10 hover:bg-accent-Default hover:scale-105 transition-transform duration-500 shadow-2xl"
+              className="relative flex flex-col gap-6 p-10 rounded-2xl group bg-white/5 backdrop-blur-md border border-white/10 hover:scale-105 transition-transform duration-500 shadow-2xl"
             >
               {/* رقم الخدمة مع أيقونة */}
               <div className="flex items-center justify-between w-full">
-                <div className="text-6xl font-extrabold text-white/10 select-none group-hover:text-white leading-none neon-text">
+                <div className="text-6xl font-extrabold text-white/10 select-none group-hover:text-white leading-none">
                   {service.num}
                 </div>
               </div>

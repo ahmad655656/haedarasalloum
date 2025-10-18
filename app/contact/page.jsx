@@ -12,14 +12,14 @@ import {
   SelectValue,
   SelectGroup,
 } from "@/components/ui/select";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { Phone, Mail, MapPin } from "lucide-react";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 
 const info = [
-  { icon: <FaPhoneAlt />, title: "Phone", description: "(+963) 983 796 029" },
-  { icon: <FaEnvelope />, title: "Email", description: "haedarahasan69@gmail.com" },
-  { icon: <FaMapMarkerAlt />, title: "Address", description: "Syria, Tartous, AlSheikh-Badr" },
+  { icon: <Phone className="w-7 h-7" />, title: "Phone", description: "(+963) 983 796 029" },
+  { icon: <Mail className="w-7 h-7" />, title: "Email", description: "haedarahasan69@gmail.com" },
+  { icon: <MapPin className="w-7 h-7" />, title: "Address", description: "Syria, Tartous, AlSheikh-Badr" },
 ];
 
 const Contact = () => {
@@ -54,8 +54,7 @@ const Contact = () => {
         },
         "GMi_Grh4yynlwtzVU"
       )
-      .then((response) => {
-        console.log("Message sent successfully!", response.status, response.text);
+      .then(() => {
         setFormData({ firstname: "", lastname: "", email: "", phone: "", service: "", message: "" });
       })
       .catch((err) => console.error("Failed to send message:", err));
@@ -65,7 +64,7 @@ const Contact = () => {
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0, transition: { delay: 1.5, duration: 0.6 } }}
-      className="py-16 bg-gradient-to-br from-gray-900 via-gray-950 to-black min-h-screen"
+      className="py-16 min-h-screen"
     >
       <div className="container mx-auto px-4 xl:px-0">
         <div className="flex flex-col xl:flex-row gap-12">
@@ -77,7 +76,7 @@ const Contact = () => {
                   key={index}
                   className="flex items-center gap-6 bg-[#27272c] p-4 xl:p-6 rounded-xl hover:shadow-neon transition-shadow duration-300"
                 >
-                  <div className="w-[60px] h-[60px] xl:w-[72px] xl:h-[72px] bg-[#1f1f24] text-accent-Default rounded-lg flex items-center justify-center text-2xl">
+                  <div className="w-[60px] h-[60px] xl:w-[72px] xl:h-[72px] bg-[#1f1f24] rounded-xl flex items-center justify-center text-accent-Default hover:text-[#00fff7] transition-all duration-300">
                     {item.icon}
                   </div>
                   <div>
@@ -97,39 +96,12 @@ const Contact = () => {
             >
               <h3 className="text-4xl text-accent-Default font-bold">Let's work together</h3>
               <p className="text-white/60 mb-4">Haedara Hasan Salloum</p>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input
-                  name="firstname"
-                  type="text"
-                  placeholder="Firstname"
-                  value={formData.firstname}
-                  onChange={handleChange}
-                  className="bg-[#1f1f24] text-white placeholder:text-white/50 focus:border-accent-Default"
-                />
-                <Input
-                  name="lastname"
-                  type="text"
-                  placeholder="Lastname"
-                  value={formData.lastname}
-                  onChange={handleChange}
-                  className="bg-[#1f1f24] text-white placeholder:text-white/50 focus:border-accent-Default"
-                />
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="Email address"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="bg-[#1f1f24] text-white placeholder:text-white/50 focus:border-accent-Default"
-                />
-                <Input
-                  name="phone"
-                  type="text"
-                  placeholder="Phone number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="bg-[#1f1f24] text-white placeholder:text-white/50 focus:border-accent-Default"
-                />
+                <Input name="firstname" placeholder="Firstname" value={formData.firstname} onChange={handleChange} className="bg-[#1f1f24] text-white placeholder:text-white/50 focus:border-accent-Default" />
+                <Input name="lastname" placeholder="Lastname" value={formData.lastname} onChange={handleChange} className="bg-[#1f1f24] text-white placeholder:text-white/50 focus:border-accent-Default" />
+                <Input name="email" type="email" placeholder="Email address" value={formData.email} onChange={handleChange} className="bg-[#1f1f24] text-white placeholder:text-white/50 focus:border-accent-Default" />
+                <Input name="phone" placeholder="Phone number" value={formData.phone} onChange={handleChange} className="bg-[#1f1f24] text-white placeholder:text-white/50 focus:border-accent-Default" />
               </div>
 
               <Select onValueChange={(value) => setFormData({ ...formData, service: value })}>
